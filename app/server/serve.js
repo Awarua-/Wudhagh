@@ -100,6 +100,6 @@ module.exports = class {
     }
 
     start () {
-        this.server.listen(this.serverPort);
+        this.server.listen(this.serverPort, '0.0.0.0');
     }
 };
