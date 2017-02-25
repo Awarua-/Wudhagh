@@ -1,11 +1,10 @@
 'use strict';
 
 let basicAuth = require('basic-auth'),
-
-unauthorised = (res) => {
-    res.set('WWW-Authenticate', 'Basic realm=Authorization Required');
-    return res.sendStatus(401);
-};
+    unauthorised = (res) => {
+        res.set('WWW-Authenticate', 'Basic realm=Authorization Required');
+        return res.sendStatus(401);
+    };
 
 exports.basicUsers = (userManager, ignoredAuthConfig) => {
     if (!ignoredAuthConfig) {
@@ -19,7 +18,7 @@ exports.basicUsers = (userManager, ignoredAuthConfig) => {
         let ip = req.ip;
         if (ip.includes(':')) {
             ip = ip.substring(ip.lastIndexOf(':') + 1);
-            if (ip === "1") {
+            if (ip === '1') {
                 ip = '127.0.0.1';
             }
         }
@@ -40,7 +39,7 @@ exports.basicUsers = (userManager, ignoredAuthConfig) => {
 
         if (!user || !user.name || !user.pass) {
             return unauthorised(res);
-        };
+        }
 
         if (userManager.validateUser(user.name, user.pass)) {
             return next();

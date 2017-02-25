@@ -1,9 +1,9 @@
 var config;
 try {
-  config = require('./config.json');
+    config = require('./config.json');
 }
 catch(e) {
-  config = {};
+    config = {};
 }
 
 require('./app/main.js').run(config);

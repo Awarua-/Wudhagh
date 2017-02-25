@@ -17,7 +17,7 @@
         
         let resetSelectionContext = () => {
             $scope.contextItem = {
-                name: "",
+                name: '',
                 quantity: 1,
                 insert: true,
                 unit: '#',
@@ -223,8 +223,8 @@
                 let unit = item.unit;
                 if (unit.length >= 3 && item.quantity > 1) {
                     switch (unit) {
-                        case 'Loaf': unit = 'Loaves'; break;
-                        default: unit += 's'; break;
+                    case 'Loaf': unit = 'Loaves'; break;
+                    default: unit += 's'; break;
                     }
                 }
                 return unit;

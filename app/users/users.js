@@ -1,9 +1,9 @@
 'use strict';
 
-﻿module.exports = class {
+module.exports = class {
     constructor (usersFile, alg) {
         if (!usersFile) {
-            usersFile = "../../users.json";
+            usersFile = '../../users.json';
         }
         try {
             this.users = require(usersFile);

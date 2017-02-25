@@ -38,12 +38,12 @@
                 $scope.shopsChart.data = [response.data.shops];
                 let labels = [];
                 for (let i = 1; i <= response.data.shops.length; i++) {
-					if (i === response.data.shops.length) {
-						labels.push('Current');
-					}
-					else {
-						labels.push('Shop ' + i);
-					}
+                    if (i === response.data.shops.length) {
+                        labels.push('Current');
+                    }
+                    else {
+                        labels.push('Shop ' + i);
+                    }
                 }
                 $scope.shopsChart.labels = labels;
                     

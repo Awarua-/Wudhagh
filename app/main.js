@@ -53,5 +53,5 @@ exports.run = (config) => {
         socket.broadcast.emit('swipe', data);
     });
 
-	server.start();
+    server.start();
 };

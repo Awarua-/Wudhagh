@@ -1,9 +1,9 @@
 'use strict';
 
-﻿let fs = require('fs'),
+let fs = require('fs'),
     path = require('path'),
     mime = require('mime'),
-	url = require('url');
+    url = require('url');
 
 exports.dir = (htmlRoot) => {
     for (let key in htmlRoot) {
@@ -16,14 +16,14 @@ exports.dir = (htmlRoot) => {
         res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
         res.header('Expires', '-1');
         res.header('Pragma', 'no-cache');
-        res.header("X-Powered-By", "Knox Enterprises");
-        res.header("Access-Control-Allow-Origin", "*");
-        res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+        res.header('X-Powered-By', 'Knox Enterprises');
+        res.header('Access-Control-Allow-Origin', '*');
+        res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
 
-		let p = url.parse(req.url).path;
-        if (p.indexOf("/api") < 0) {
-            if (p === "/") {
-                p = "/index.html";
+        let p = url.parse(req.url).path;
+        if (p.indexOf('/api') < 0) {
+            if (p === '/') {
+                p = '/index.html';
             }
 
             let found = false,
@@ -40,7 +40,7 @@ exports.dir = (htmlRoot) => {
             }
 
             if (!found) {
-                res.contentType("application/json");
+                res.contentType('application/json');
                 res.status(400).send('{"complete":false, "message":"bad request"}');
                 return;
             }
@@ -50,11 +50,11 @@ exports.dir = (htmlRoot) => {
                 if (err) {
                     fs.readFile(path.join(htmlRoot[''], '404.html'), function(err, data) {
                         if (err) {
-                            res.contentType("application/json");
+                            res.contentType('application/json');
                             res.status(404).send('{"complete":false, "message":"file not found"}');
                         } else {
                             res.status(404);
-                            res.contentType("text/html");
+                            res.contentType('text/html');
                             res.send(data);
                         }
                     });

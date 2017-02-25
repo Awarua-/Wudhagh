@@ -14,7 +14,7 @@ module.exports = class {
             htmlRoot = {
                 '/bower_components/': './../../bower_components/',
                 '': './../../www/'
-            }
+            };
         }
     
         this.serverPort = port ? port : 8080;
@@ -68,12 +68,12 @@ module.exports = class {
     _handleApiCall (serverCall, api, func) {
         serverCall.call(this, '/api/' + api, function (req, res) {
             try {
-                res.contentType("application/json");
+                res.contentType('application/json');
                 if (func(req, res)) {
                     res.status(200).send('{"complete":true}');
                 }
             }
-		    catch (e) {
+            catch (e) {
                 console.log(e.stack);
                 res.status(400).send('{"complete":false}');
             }
@@ -102,4 +102,4 @@ module.exports = class {
     start () {
         this.server.listen(this.serverPort);
     }
-}
+};

@@ -4,7 +4,7 @@
 
         $scope.getRoutes = function() {
             return routes;
-        }
+        };
 
         $scope.current = function (currLocation) {
             return $location.path().startsWith(currLocation);

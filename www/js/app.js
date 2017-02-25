@@ -1,28 +1,28 @@
 ﻿let Wudhagh = angular.module('Wudhagh', [
-    'ngRoute',
-    'ui.bootstrap',
-    'ngTouch',
-    'chart.js',
-    'btford.socket-io',
-    'wudhaghControllers'
-]),
+        'ngRoute',
+        'ui.bootstrap',
+        'ngTouch',
+        'chart.js',
+        'btford.socket-io',
+        'wudhaghControllers'
+    ]),
 
-routes = [
-    {
-        path: '/shoppinglist',
-        templateUrl: 'pages/shoppinglist.html',
-        controller: 'ShoppingListController',
-        name: 'Shopping List'
-    },
-    {
-        path: '/shoppinghistory',
-        templateUrl: 'pages/shoppinghistory.html',
-        controller: 'ShoppingHistoryController',
-        name: 'Shopping History'
-    }
-],
+    routes = [
+        {
+            path: '/shoppinglist',
+            templateUrl: 'pages/shoppinglist.html',
+            controller: 'ShoppingListController',
+            name: 'Shopping List'
+        },
+        {
+            path: '/shoppinghistory',
+            templateUrl: 'pages/shoppinghistory.html',
+            controller: 'ShoppingHistoryController',
+            name: 'Shopping History'
+        }
+    ],
 
-defaultRoute = 0;
+    defaultRoute = 0;
 
 Wudhagh.config(['$routeProvider', '$locationProvider', ($routeProvider, $locationProvider) => {
 
